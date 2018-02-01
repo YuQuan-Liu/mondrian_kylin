@@ -39,11 +39,16 @@ public class KylinDialect extends JdbcDialectImpl {
 
     @Override
     public boolean allowsCountDistinct() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean allowsJoinOn() {
         return true;
+    }
+
+    @Override
+    public String toUpper(String expr) {
+        return expr;
     }
 }
